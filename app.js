@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var myDataRouter = require('./routes/mydata')
 var usersRouter = require('./routes/users');
 var myDataRouter = require('./routes/mydata')
+var computation = require('./routes/computation');
 
 var app = express();
 
@@ -22,9 +23,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/',myDataRouter)
+app.use('/',myDataRouter);
 app.use('/users', usersRouter);
-app.use('/mydata', myDataRouter)
+app.use('/mydata', myDataRouter);
+app.use('/computation',computation);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
